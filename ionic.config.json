@@ -1,0 +1,7 @@
+{
+  "name": "TP5-GuichetAutWeb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
