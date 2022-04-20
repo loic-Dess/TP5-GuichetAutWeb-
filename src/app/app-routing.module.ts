@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { GuardGuard } from './controler/guard.guard';
 const routes: Routes = [
   {
     path: '',
@@ -9,11 +9,13 @@ const routes: Routes = [
   },
   {
     path: 'ouvrire-compte',
-    loadChildren: () => import('./view/ouvrire-compte/ouvrire-compte.module').then( m => m.OuvrireComptePageModule)
+    loadChildren: () => import('./view/ouvrire-compte/ouvrire-compte.module').then( m => m.OuvrireComptePageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'consulter-compte',
-    loadChildren: () => import('./view/consulter-compte/consulter-compte.module').then( m => m.ConsulterComptePageModule)
+    loadChildren: () => import('./view/consulter-compte/consulter-compte.module').then( m => m.ConsulterComptePageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'connexion',
@@ -25,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'a-propos',
-    loadChildren: () => import('./view/a-propos/a-propos.module').then( m => m.AProposPageModule)
+    loadChildren: () => import('./view/a-propos/a-propos.module').then( m => m.AProposPageModule),
+    canActivate: [GuardGuard]
   },
 ];
 

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ouvrireCompte</ion-title>
+    <ion-title>Ouvrire un compte</ion-title>
     <ion-menu-button menu="main-menu" slot="start"></ion-menu-button>
     <!-- <ion-item *ngIf="" lines="none" button (click)="" slot="end"><ion-icon name="log-in-outline"></ion-icon></ion-item> -->
     <!-- <ion-item *ngIf="" lines="none" button (click)="" slot="end"><ion-icon name="log-out-outline"></ion-icon></ion-item> -->
@@ -8,5 +8,51 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Type de compte : </ion-label>  
+          <ion-select [(ngModel)]="typeCompte" (ionChange)="hideUser()">
+            <ion-select-option value="courant">Compte simple</ion-select-option>
+            <ion-select-option value="join">Compte join</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
 
+      <ion-col>
+        <ion-item *ngIf="isCompteJoin">
+          <ion-label>Deuxieme utilisateur : </ion-label>  
+          <ion-select>
+            <ion-select-option value="1">user 1 </ion-select-option>
+            <ion-select-option value="2">user 2</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Decouvert autorisé : </ion-label>  
+          <ion-input readonly placeholder="50 €"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Montant du premier depot : </ion-label>  
+          <ion-input readonly placeholder="50 €"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col offset="6">
+        <ion-button expand="block">Crée le compte</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
