@@ -1,3 +1,49 @@
-<p>
-  depot works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Dépot</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()"> <ion-icon size="large" name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Choix du compte : </ion-label>  
+          <ion-select [formControl]="compte">
+            <ion-select-option value="compte1">Compte 1</ion-select-option>
+            <ion-select-option value="compte2">Compte 2</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Montant du dépot : </ion-label>  
+          <ion-input type="number" [formControl]="operation" placeholder="50 €"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Solde aprés opération : </ion-label>  
+          <ion-input readonly [formControl]="solde"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row> 
+      <ion-col offset="6">
+        <ion-button [disabled]="operation.invalid" expand="block" (click)="confirmOperation()">Deposer</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
