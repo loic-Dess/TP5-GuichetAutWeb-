@@ -10,6 +10,20 @@ import { RetraieComponent } from '../retraie/retraie.component';
   styleUrls: ['./consulter-compte.page.scss'],
 })
 export class ConsulterComptePage implements OnInit {
+  operations = [
+    {
+      date: "14/11/2022",
+      type: "Retrait",
+      compte : "1",
+      montant : 250
+    },
+    {
+      date: "31/12/2022",
+      type: "depot",
+      compte : "1",
+      montant : 300
+    }
+  ];
 
   constructor(    
     private alertController: AlertController,
