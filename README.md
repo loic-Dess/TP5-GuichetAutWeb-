@@ -7,4 +7,4 @@
 # Framework ionic anguarl 
 
 
-Demmarrage de l'application ionic serve
+Demmarrage de l'application : ionic serve
