@@ -13,7 +13,7 @@
       <ion-col>
         <ion-item>
           <ion-label>Solde total : </ion-label>  
-          <ion-input readonly placeholder="50 €"></ion-input>
+          <ion-input [(ngModel)]="total" readonly></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -22,14 +22,20 @@
       <ion-col>
         <ion-item>
           <ion-label>Solde du premier compte : </ion-label>  
-          <ion-input readonly placeholder="50 €"></ion-input>
+          <ion-input [(ngModel)]="solde1" readonly></ion-input>
         </ion-item>
       </ion-col>
 
       <ion-col>
         <ion-item>
           <ion-label>Découvert autorisé : </ion-label>  
-          <ion-input placeholder="50 €"></ion-input>
+          <ion-input [(ngModel)]="decouvert1" placeholder="50 €"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-button (click)="updateDecouvert('1')">Valider</ion-button>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -38,14 +44,20 @@
       <ion-col>
         <ion-item>
           <ion-label>Solde du deuxieme compte : </ion-label>  
-          <ion-input readonly placeholder="50 €"></ion-input>
+          <ion-input [(ngModel)]="solde2" readonly></ion-input>
         </ion-item>
       </ion-col>
       
       <ion-col>
         <ion-item>
           <ion-label>Découvert autorisé : </ion-label>  
-          <ion-input readonly placeholder="50 €"></ion-input>
+          <ion-input [(ngModel)]="decouvert2" placeholder="50 €"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-button (click)="updateDecouvert('2')">Valider</ion-button>
         </ion-item>
       </ion-col>
     </ion-row>

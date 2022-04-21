@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>aPropos</ion-title>
+    <ion-title>A propos</ion-title>
     <ion-menu-button menu="main-menu" slot="start"></ion-menu-button>
     <!-- <ion-item *ngIf="" lines="none" button (click)="" slot="end"><ion-icon name="log-in-outline"></ion-icon></ion-item> -->
     <!-- <ion-item *ngIf="" lines="none" button (click)="" slot="end"><ion-icon name="log-out-outline"></ion-icon></ion-item> -->
@@ -8,5 +8,38 @@
 </ion-header>
 
 <ion-content>
+  <br>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Date :
+      </ion-col>
+      <ion-col>
+        {{ date }}
+      </ion-col>
+    </ion-row>
 
+    <br>
+
+    <ion-row>
+      <ion-col>
+        Version :
+      </ion-col>
+      <ion-col>
+        {{ version }}
+      </ion-col>
+    </ion-row>
+
+    <br>
+
+    <ion-row>
+      <ion-col>
+        News :
+      </ion-col>
+      <ion-col>
+        {{ news }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

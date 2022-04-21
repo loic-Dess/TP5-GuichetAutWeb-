@@ -31,15 +31,6 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label>Solde aprés opération : </ion-label>  
-          <ion-input readonly [formControl]="solde" placeholder="50 €"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
     <ion-row> 
       <ion-col offset="6">
         <ion-button [disabled]="operation.invalid" expand="block" (click)="confirmOperation()">Retirait</ion-button>
