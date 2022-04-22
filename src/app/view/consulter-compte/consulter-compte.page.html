@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Etat des comptes</ion-title>
+    <ion-menu-button menu="main-menu" slot="start"></ion-menu-button>
+    <!-- <ion-item *ngIf="" lines="none" button (click)="" slot="end"><ion-icon name="log-in-outline"></ion-icon></ion-item> -->
+    <!-- <ion-item *ngIf="" lines="none" button (click)="" slot="end"><ion-icon name="log-out-outline"></ion-icon></ion-item> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Solde total : </ion-label>  
+          <ion-input [(ngModel)]="total" readonly></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Solde du premier compte : </ion-label>  
+          <ion-input [(ngModel)]="solde1" readonly></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label>Découvert autorisé : </ion-label>  
+          <ion-input [(ngModel)]="decouvert1" placeholder="50 €"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-button (click)="updateDecouvert('1')">Valider</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Solde du deuxieme compte : </ion-label>  
+          <ion-input [(ngModel)]="solde2" readonly></ion-input>
+        </ion-item>
+      </ion-col>
+      
+      <ion-col>
+        <ion-item>
+          <ion-label>Découvert autorisé : </ion-label>  
+          <ion-input [(ngModel)]="decouvert2" placeholder="50 €"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-button (click)="updateDecouvert('2')">Valider</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-list-header lines="inset"> 
+            <ion-toolbar>
+              <ion-buttons slot="end">   
+                <ion-button (click)="depot()"><ion-icon size="large" name="add-outline"></ion-icon></ion-button>
+                <ion-button (click)="retrait()"><ion-icon size="large" name="remove-outline"></ion-icon></ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-list-header>
+  
+          <ion-grid>
+            <ion-row *ngFor="let operation of operations">
+              <ion-col>
+                {{ operation.date }}
+              </ion-col>
+              <ion-col>
+                {{ operation.compte }}
+              </ion-col>
+              <ion-col>
+                {{ operation.type }}
+              </ion-col>
+              <ion-col>
+                {{ operation.montant }}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
